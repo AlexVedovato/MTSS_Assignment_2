@@ -11,7 +11,9 @@
     <module name="AvoidStarImport"/>
     <module name="IllegalImport"/>
   </module>
-  <module name="LineLength"/>
+<module name="LineLength">
+    <property name="max" value="250"/>
+  </module>
   <module name="FileTabCharacter"/>
   <module name="FileLength"/>
   <module name="Header">
