@@ -63,6 +63,15 @@ public class IntegerToRomanTest {
         assertEquals(IntegerToRoman.convert(500), "D");
     }
 
+    @Test
+    public void first1000NumberConversion() {
+        assertEquals(IntegerToRoman.convert(578), "DLXXVIII");
+        assertEquals(IntegerToRoman.convert(632), "DCXXXII");
+        assertEquals(IntegerToRoman.convert(781), "DCCLXXXI"); 
+        assertEquals(IntegerToRoman.convert(919), "CMXIX");
+        assertEquals(IntegerToRoman.convert(1000), "M");
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void overRangeThrowsIllegalArgumentException() {
         IntegerToRoman.convert(1001);
