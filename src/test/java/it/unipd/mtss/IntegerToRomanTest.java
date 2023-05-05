@@ -46,6 +46,14 @@ public class IntegerToRomanTest {
         assertEquals(IntegerToRoman.convert(50), "L");
     }
 
+    @Test
+    public void first100NumberConversion() {
+        assertEquals(IntegerToRoman.convert(57), "LVII");
+        assertEquals(IntegerToRoman.convert(69), "LXIX");
+        assertEquals(IntegerToRoman.convert(91), "XCI");
+        assertEquals(IntegerToRoman.convert(99), "XCIX");
+        assertEquals(IntegerToRoman.convert(100), "C");
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void overRangeThrowsIllegalArgumentException() {
