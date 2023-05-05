@@ -24,6 +24,14 @@ public class IntegerToRomanTest {
         assertEquals(IntegerToRoman.convert(6), "VI");
     }
 
+    @Test
+    public void first10NumberConversion() {
+        assertEquals(IntegerToRoman.convert(7), "VII");
+        assertEquals(IntegerToRoman.convert(8), "VIII");
+        assertEquals(IntegerToRoman.convert(9), "IX");
+        assertEquals(IntegerToRoman.convert(10), "X");
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void overRangeThrowsIllegalArgumentException() {
         IntegerToRoman.convert(1001);
