@@ -8,14 +8,20 @@ import java.util.HashMap;
 
 import org.junit.Test;
 
-public class IntegerToRomanTest 
-{
+public class IntegerToRomanTest {
 
     @Test
-    public void first3NumberConversion(){
-        assertEquals(IntegerToRoman.convert(1),"I");
-        assertEquals(IntegerToRoman.convert(2),"II");
-        assertEquals(IntegerToRoman.convert(3),"III");
+    public void first3NumberConversion() {
+        assertEquals(IntegerToRoman.convert(1), "I");
+        assertEquals(IntegerToRoman.convert(2), "II");
+        assertEquals(IntegerToRoman.convert(3), "III");
+    }
+
+    @Test
+    public void first6NumberConversion() {
+        assertEquals(IntegerToRoman.convert(4), "IV");
+        assertEquals(IntegerToRoman.convert(5), "V");
+        assertEquals(IntegerToRoman.convert(6), "VI");
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -28,14 +34,14 @@ public class IntegerToRomanTest
         IntegerToRoman.convert(0);
     }
 
-    @Test(timeout = 200) 
+    @Test(timeout = 200)
     public void performance() {
-        IntegerToRoman.convert(888); //888 è il numero romano più lungo tra 1 e 1000
+        IntegerToRoman.convert(888); // 888 è il numero romano più lungo tra 1 e 1000
     }
 
     @Test
-    public void checkInverseRelationship(){
-        //arrange
+    public void checkInverseRelationship() {
+        // arrange
         Random rand = new Random();
         int min = 1;
         int max = 1000;
@@ -51,8 +57,8 @@ public class IntegerToRomanTest
         int result = 0;
         int prevValue = 0;
 
-        //act
-        String s=IntegerToRoman.convert(randomNumber);
+        // act
+        String s = IntegerToRoman.convert(randomNumber);
         for (int i = s.length() - 1; i >= 0; i--) {
             int curValue = romanNumerals.get(s.charAt(i));
             if (curValue < prevValue) {
@@ -63,10 +69,8 @@ public class IntegerToRomanTest
             prevValue = curValue;
         }
 
-        //assert
-        assertEquals(randomNumber,result);
+        // assert
+        assertEquals(randomNumber, result);
     }
-
-
 
 }
