@@ -55,6 +55,14 @@ public class IntegerToRomanTest {
         assertEquals(IntegerToRoman.convert(100), "C");
     }
 
+    @Test
+    public void first500NumberConversion() {
+        assertEquals(IntegerToRoman.convert(150), "CL");
+        assertEquals(IntegerToRoman.convert(212), "CCXII");
+        assertEquals(IntegerToRoman.convert(399), "CCCXCIX");
+        assertEquals(IntegerToRoman.convert(500), "D");
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void overRangeThrowsIllegalArgumentException() {
         IntegerToRoman.convert(1001);
