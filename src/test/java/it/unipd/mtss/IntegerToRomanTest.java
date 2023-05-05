@@ -59,6 +59,7 @@ public class IntegerToRomanTest {
     public void first500NumberConversion() {
         assertEquals(IntegerToRoman.convert(150), "CL");
         assertEquals(IntegerToRoman.convert(212), "CCXII");
+        assertEquals(IntegerToRoman.convert(300), "CCC");
         assertEquals(IntegerToRoman.convert(399), "CCCXCIX");
         assertEquals(IntegerToRoman.convert(500), "D");
     }
